@@ -1,3 +1,12 @@
 [submodule "opbackend_tf"]
 	path = opbackend_tf
 	url = https://oauth2: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@github.com/gherotech/opbackend_tf.git
+[submodule "opfe-bo"]
+	path = opfe-bo
+	url = https://oauth2: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@github.com/gherotech/opfe-bo.git
+[submodule "opfe-aff-nuxt"]
+	path = opfe-aff-nuxt
+	url = https://oauth2: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@github.com/gherotech/opfe-aff-nuxt.git
+[submodule "template_asia_fe"]
+	path = template_asia_fe
+	url = https://oauth2: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@github.com/gherotech/template_asia_fe.git
