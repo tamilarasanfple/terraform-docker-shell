@@ -5,6 +5,10 @@ repositories=(
     "/root/docker-shell/"
 )
 
+# Pull changes from Git repository
+echo "Pulling changes from Git repository"
+git pull origin main
+
 # Loop through each repository
 for repo_path in "${repositories[@]}"; do
     echo "Bringing down containers for repository at: ${repo_path}"
