@@ -23,3 +23,7 @@ for repo_path in "${repositories[@]}"; do
     sudo docker-compose -f "$repo_path/docker-compose.yml" up -d
 done
 
+# Display status of all Docker containers
+echo "Current Docker container status:"
+sudo docker ps -a
+
