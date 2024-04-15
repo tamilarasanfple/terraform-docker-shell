@@ -22,6 +22,3 @@ for repo_path in "${repositories[@]}"; do
     echo "Bringing up containers for repository at: ${repo_path}"
     sudo docker-compose -f "$repo_path/docker-compose.yml" up -d
 done
-
-
-docker-compose down
