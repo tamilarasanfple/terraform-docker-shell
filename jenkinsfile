@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    // Define the directory path
+    environment {
+        DOCKER_SHELL_PATH = '/var/lib/jenkins/workspace/docker-shell-pipeline'
+    }
+
+    stages {
+        stage('Checkout Repository') {
+            steps {
+                // Checkout the Git repository
+                git branch: 'main', credentialsId: 'authentication', url: 'https://github.com/tamilarasanfple/terraform-docker-shell'
+            }
+        }
+        stage('Build and Run Docker Containers') {
+            steps {
+                // Change to the directory where the Docker Compose file is located
+                dir(env.DOCKER_SHELL_PATH) {
+                    // Bring down Docker containers
+                    sh './gitpull.sh'
+                }
+            }
+        }
+        stage('Show Docker Containers Status') {
+            steps {
+                // Display status of all Docker containers
+                sh 'docker ps -a'
+            }
+        }
+    }
+}
+
